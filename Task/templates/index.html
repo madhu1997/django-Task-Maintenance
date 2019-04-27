@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the Cookies Training !</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        <form action="{% url 'Task:task' %}">
+        <div class="col-sm-4">
+        <button type="submit" class="btn btn-primary">Enter Session Details</button>
+        </div>
+        </form>
+        
+        <form action="{% url 'Task:show' %}">
+        <div class="col-sm-4">  
+        <button type="submit" class="btn btn-primary">Show Details</button>
+         </div> 
+        </form>
+        
+        <form action="{% url 'Task:Eshow' %}">
+        <div class="col-sm-4">  
+        <button type="submit" class="btn btn-primary">Mark Details</button>
+         </div> 
+        </form>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+        
+ 	 {% endif  %}
+  </div>
+</div>
+{% endblock %}

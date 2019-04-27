@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: hsl(147, 50%, 47%);
+  color: white;
+</style>
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>   
+        <th>NamingConvertion</th>  
+        <th>validationUse</th>  
+        <th>exceptionUse</th>  
+        <th>functionalityUse</th>  
+        <th>InternetUsage</th>
+        <th>UIdesign</th>
+        <th>AdditionalTask</th>
+        <th>communication</th>
+        <th>debug</th>
+        <th>coding</th>
+        <th>TaskCompletion</th>
+       
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for form in evaluate %}  
+    <tr> 
+        <td>{{ form.NamingConvertion }}</td> 
+        <td>{{ form.validationUse }}</td> 
+        <td>{{ form.exceptionUse }}</td> 
+        <td>{{ form.functionalityUse }}</td> 
+        <td>{{ form.InternetUsage }}</td> 
+        <td>{{ form.UIdesign }}</td> 
+        <td>{{ form.AdditionalTask }}</td> 
+        <td>{{ form.communication }}</td> 
+        <td>{{ form.debug }}</td> 
+        <td>{{ form.coding }}</td>  
+        <td>{{ form.TaskCompletion }}</td>  
+	       
+    </tr>  
+{% endfor %}
+</tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="{% url 'Task:index' %}"class="btn btn-primary">Back</a></center>
+{% endblock %}

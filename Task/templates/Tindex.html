@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+  <div class="jumbotron">
+ <style>
+ input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 2px;
+}
+</style> 
+</head>  
+<body bgcolor= #FAEBD7>  
+<form method="POST" class="post-form" action="{% url 'Task:tasksave' %}">  
+        {% csrf_token %} 
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Fill Your session Details</h3>  
+    </div>  
+  	</div>  
+    <div class="form-group row">  
+    <label class="col-sm-3 col-form-label">Date:</label>  
+    <div class="col-sm-4"> 
+      <input type="Date" name="Date" placeholder="YYYY-MM-DD">
+    </div>  
+  </div>  
+    <div class="form-group row">  
+   <label class="col-sm-3 col-form-label">Session1 [9:30-11:30]:</label>  
+    <div class="col-sm-5">  
+     {{ form.session1 }}  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+   <label class="col-sm-3 col-form-label">Session2[11:45-1:00]:</label>  
+    <div class="col-sm-5">  
+     {{ form.session2 }}  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+   <label class="col-sm-3 col-form-label">Session3 [2:00-4:00]:</label>  
+    <div class="col-sm-5">  
+     {{ form.session3 }}  
+    </div>  
+  </div> 
+  <div class="form-group row">  
+   <label class="col-sm-3 col-form-label">Session4 [4:00-6:30]:</label>  
+    <div class="col-sm-5">  
+     {{ form.session4 }}  
+    </div>  
+  </div> 
+  	<div class="form-group row">  
+   <label class="col-sm-3 col-form-label">Description:</label>  
+    <div class="col-sm-5">  
+     {{ form.description }}  
+    </div>  
+  </div>
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+   </div>  
+   </div>  
+</form> 
+</body>
+{% endblock %}
+
+
